@@ -1,0 +1,128 @@
+ProgramASTnode:
+ ExternASTnode: 
+  FunProtoASTnode: int print_int(int) <line: 4, column: 12>
+ FunDeclASTnode:
+  FunProtoASTnode: int fibonacci(int) <line: 6, column: 5>
+  FunBodyASTnode:
+   BlockASTnode:
+    VarDeclASTnode: int first <line: 8, column: 7>
+    VarDeclASTnode: int second <line: 9, column: 7>
+    VarDeclASTnode: int next <line: 10, column: 7>
+    VarDeclASTnode: int c <line: 11, column: 7>
+    VarDeclASTnode: int total <line: 12, column: 7>
+    ExprASTnode:
+     FunCallASTnode:
+      IdentASTnode: print_int <line: 14, column: 3>
+      Args:
+       ExprASTnode:
+        IdentASTnode: n <line: 14, column: 13>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: first <line: 15, column: 3>
+      ExprASTnode:
+       IntASTnode: 0 <line: 15, column: 11>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: second <line: 16, column: 3>
+      ExprASTnode:
+       IntASTnode: 1 <line: 16, column: 12>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: c <line: 17, column: 3>
+      ExprASTnode:
+       IntASTnode: 1 <line: 17, column: 7>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: total <line: 18, column: 3>
+      ExprASTnode:
+       IntASTnode: 0 <line: 18, column: 11>
+    WhileASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: <
+       LHS:
+        ExprASTnode:
+         IdentASTnode: c <line: 20, column: 9>
+       RHS:
+        ExprASTnode:
+         IdentASTnode: n <line: 20, column: 13>
+     BlockASTnode:
+      IfASTnode:
+       ExprASTnode:
+        BinOpASTnode:
+         Binary Operation: <=
+         LHS:
+          ExprASTnode:
+           IdentASTnode: c <line: 21, column: 9>
+         RHS:
+          ExprASTnode:
+           IntASTnode: 1 <line: 21, column: 14>
+       BlockASTnode:
+        ExprASTnode:
+         AssignASTnode:
+          IdentASTnode: next <line: 22, column: 7>
+          ExprASTnode:
+           IdentASTnode: c <line: 22, column: 14>
+       ElseStmt:
+        BlockASTnode:
+         ExprASTnode:
+          AssignASTnode:
+           IdentASTnode: next <line: 25, column: 7>
+           ExprASTnode:
+            BinOpASTnode:
+             Binary Operation: +
+             LHS:
+              ExprASTnode:
+               IdentASTnode: first <line: 25, column: 14>
+             RHS:
+              ExprASTnode:
+               IdentASTnode: second <line: 25, column: 22>
+         ExprASTnode:
+          AssignASTnode:
+           IdentASTnode: first <line: 26, column: 7>
+           ExprASTnode:
+            IdentASTnode: second <line: 26, column: 15>
+         ExprASTnode:
+          AssignASTnode:
+           IdentASTnode: second <line: 27, column: 7>
+           ExprASTnode:
+            IdentASTnode: next <line: 27, column: 16>
+      ExprASTnode:
+       FunCallASTnode:
+        IdentASTnode: print_int <line: 29, column: 5>
+        Args:
+         ExprASTnode:
+          IdentASTnode: next <line: 29, column: 15>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: c <line: 30, column: 5>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            IdentASTnode: c <line: 30, column: 9>
+          RHS:
+           ExprASTnode:
+            IntASTnode: 1 <line: 30, column: 13>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: total <line: 31, column: 5>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            IdentASTnode: total <line: 31, column: 13>
+          RHS:
+           ExprASTnode:
+            IdentASTnode: next <line: 31, column: 21>
+    ExprASTnode:
+     FunCallASTnode:
+      IdentASTnode: print_int <line: 33, column: 3>
+      Args:
+       ExprASTnode:
+        IdentASTnode: total <line: 33, column: 13>
+    ReturnASTnode:
+     ExprASTnode:
+      IdentASTnode: total <line: 34, column: 10>

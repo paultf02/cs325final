@@ -1,0 +1,74 @@
+ProgramASTnode:
+ ExternASTnode: 
+  FunProtoASTnode: int print_int(int) <line: 3, column: 12>
+ FunDeclASTnode:
+  FunProtoASTnode: int addNumbers(int) <line: 5, column: 5>
+  FunBodyASTnode:
+   BlockASTnode:
+    VarDeclASTnode: int result <line: 7, column: 9>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: result <line: 8, column: 5>
+      ExprASTnode:
+       IntASTnode: 0 <line: 8, column: 14>
+    IfASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: !=
+       LHS:
+        ExprASTnode:
+         IdentASTnode: n <line: 10, column: 8>
+       RHS:
+        ExprASTnode:
+         IntASTnode: 0 <line: 10, column: 13>
+     BlockASTnode:
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: result <line: 12, column: 9>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            IdentASTnode: n <line: 12, column: 18>
+          RHS:
+           ExprASTnode:
+            FunCallASTnode:
+             IdentASTnode: addNumbers <line: 12, column: 22>
+             Args:
+              ExprASTnode:
+               BinOpASTnode:
+                Binary Operation: -
+                LHS:
+                 ExprASTnode:
+                  IdentASTnode: n <line: 12, column: 33>
+                RHS:
+                 ExprASTnode:
+                  IntASTnode: 1 <line: 12, column: 35>
+     ElseStmt:
+      BlockASTnode:
+       ExprASTnode:
+        AssignASTnode:
+         IdentASTnode: result <line: 15, column: 9>
+         ExprASTnode:
+          IdentASTnode: n <line: 15, column: 19>
+    ExprASTnode:
+     FunCallASTnode:
+      IdentASTnode: print_int <line: 17, column: 5>
+      Args:
+       ExprASTnode:
+        IdentASTnode: result <line: 17, column: 15>
+    ReturnASTnode:
+     ExprASTnode:
+      IdentASTnode: result <line: 18, column: 12>
+ FunDeclASTnode:
+  FunProtoASTnode: int recursion_driver(int) <line: 21, column: 5>
+  FunBodyASTnode:
+   BlockASTnode:
+    ReturnASTnode:
+     ExprASTnode:
+      FunCallASTnode:
+       IdentASTnode: addNumbers <line: 22, column: 12>
+       Args:
+        ExprASTnode:
+         IdentASTnode: num <line: 22, column: 23>

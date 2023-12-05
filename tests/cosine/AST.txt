@@ -1,0 +1,162 @@
+ProgramASTnode:
+ ExternASTnode: 
+  FunProtoASTnode: float print_float(float) <line: 4, column: 14>
+ FunDeclASTnode:
+  FunProtoASTnode: float cosine(float) <line: 6, column: 7>
+  FunBodyASTnode:
+   BlockASTnode:
+    VarDeclASTnode: float cos <line: 8, column: 9>
+    VarDeclASTnode: float n <line: 9, column: 9>
+    VarDeclASTnode: float term <line: 10, column: 9>
+    VarDeclASTnode: float eps <line: 11, column: 9>
+    VarDeclASTnode: float alt <line: 12, column: 9>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: eps <line: 14, column: 3>
+      ExprASTnode:
+       FloatASTnode: 0.000001 <line: 14, column: 9>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: n <line: 15, column: 3>
+      ExprASTnode:
+       FloatASTnode: 1.0 <line: 15, column: 7>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: cos <line: 16, column: 3>
+      ExprASTnode:
+       FloatASTnode: 1.0 <line: 16, column: 9>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: term <line: 17, column: 3>
+      ExprASTnode:
+       FloatASTnode: 1.0 <line: 17, column: 10>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: alt <line: 18, column: 3>
+      ExprASTnode:
+       UnOpASTnode:
+        Unary Operation: -
+        ExprASTnode:
+         FloatASTnode: 1.0 <line: 18, column: 10>
+    WhileASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: >
+       LHS:
+        ExprASTnode:
+         IdentASTnode: term <line: 20, column: 10>
+       RHS:
+        ExprASTnode:
+         IdentASTnode: eps <line: 20, column: 17>
+     BlockASTnode:
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: term <line: 21, column: 5>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: /
+          LHS:
+           ExprASTnode:
+            BinOpASTnode:
+             Binary Operation: /
+             LHS:
+              ExprASTnode:
+               BinOpASTnode:
+                Binary Operation: *
+                LHS:
+                 ExprASTnode:
+                  BinOpASTnode:
+                   Binary Operation: *
+                   LHS:
+                    ExprASTnode:
+                     IdentASTnode: term <line: 21, column: 12>
+                   RHS:
+                    ExprASTnode:
+                     IdentASTnode: x <line: 21, column: 19>
+                RHS:
+                 ExprASTnode:
+                  IdentASTnode: x <line: 21, column: 23>
+             RHS:
+              ExprASTnode:
+               IdentASTnode: n <line: 21, column: 27>
+          RHS:
+           ExprASTnode:
+            BinOpASTnode:
+             Binary Operation: +
+             LHS:
+              ExprASTnode:
+               IdentASTnode: n <line: 21, column: 32>
+             RHS:
+              ExprASTnode:
+               IntASTnode: 1 <line: 21, column: 34>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: cos <line: 23, column: 5>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            IdentASTnode: cos <line: 23, column: 11>
+          RHS:
+           ExprASTnode:
+            BinOpASTnode:
+             Binary Operation: *
+             LHS:
+              ExprASTnode:
+               IdentASTnode: alt <line: 23, column: 17>
+             RHS:
+              ExprASTnode:
+               IdentASTnode: term <line: 23, column: 23>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: alt <line: 24, column: 5>
+        ExprASTnode:
+         UnOpASTnode:
+          Unary Operation: -
+          ExprASTnode:
+           IdentASTnode: alt <line: 24, column: 12>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: n <line: 25, column: 5>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            IdentASTnode: n <line: 25, column: 9>
+          RHS:
+           ExprASTnode:
+            IntASTnode: 2 <line: 25, column: 13>
+      IfASTnode:
+       ExprASTnode:
+        BinOpASTnode:
+         Binary Operation: <
+         LHS:
+          ExprASTnode:
+           IdentASTnode: n <line: 26, column: 9>
+         RHS:
+          ExprASTnode:
+           IntASTnode: 200000 <line: 26, column: 13>
+       BlockASTnode:
+        ExprASTnode:
+         FunCallASTnode:
+          IdentASTnode: print_float <line: 27, column: 7>
+          Args:
+           ExprASTnode:
+            IdentASTnode: term <line: 27, column: 19>
+        ExprASTnode:
+         FunCallASTnode:
+          IdentASTnode: print_float <line: 28, column: 7>
+          Args:
+           ExprASTnode:
+            IdentASTnode: cos <line: 28, column: 19>
+        ExprASTnode:
+         FunCallASTnode:
+          IdentASTnode: print_float <line: 29, column: 7>
+          Args:
+           ExprASTnode:
+            FloatASTnode: 42.0 <line: 29, column: 19>
+    ReturnASTnode:
+     ExprASTnode:
+      IdentASTnode: cos <line: 32, column: 10>

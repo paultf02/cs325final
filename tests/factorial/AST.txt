@@ -1,0 +1,55 @@
+ProgramASTnode:
+ FunDeclASTnode:
+  FunProtoASTnode: int factorial(int) <line: 2, column: 5>
+  FunBodyASTnode:
+   BlockASTnode:
+    VarDeclASTnode: int i <line: 4, column: 9>
+    VarDeclASTnode: int factorial <line: 5, column: 9>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: factorial <line: 7, column: 5>
+      ExprASTnode:
+       IntASTnode: 1 <line: 7, column: 17>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: i <line: 8, column: 5>
+      ExprASTnode:
+       IntASTnode: 1 <line: 8, column: 9>
+    WhileASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: <=
+       LHS:
+        ExprASTnode:
+         IdentASTnode: i <line: 10, column: 12>
+       RHS:
+        ExprASTnode:
+         IdentASTnode: n <line: 10, column: 15>
+     BlockASTnode:
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: factorial <line: 11, column: 7>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: *
+          LHS:
+           ExprASTnode:
+            IdentASTnode: factorial <line: 11, column: 19>
+          RHS:
+           ExprASTnode:
+            IdentASTnode: i <line: 11, column: 31>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: i <line: 12, column: 7>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            IdentASTnode: i <line: 12, column: 11>
+          RHS:
+           ExprASTnode:
+            IntASTnode: 1 <line: 12, column: 15>
+    ReturnASTnode:
+     ExprASTnode:
+      IdentASTnode: factorial <line: 15, column: 12>

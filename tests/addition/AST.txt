@@ -1,0 +1,62 @@
+ProgramASTnode:
+ ExternASTnode: 
+  FunProtoASTnode: int print_int(int) <line: 2, column: 12>
+ FunDeclASTnode:
+  FunProtoASTnode: int addition(int, int) <line: 4, column: 5>
+  FunBodyASTnode:
+   BlockASTnode:
+    VarDeclASTnode: int result <line: 5, column: 6>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: result <line: 6, column: 2>
+      ExprASTnode:
+       BinOpASTnode:
+        Binary Operation: +
+        LHS:
+         ExprASTnode:
+          IdentASTnode: n <line: 6, column: 11>
+        RHS:
+         ExprASTnode:
+          IdentASTnode: m <line: 6, column: 15>
+    IfASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: ==
+       LHS:
+        ExprASTnode:
+         IdentASTnode: n <line: 9, column: 6>
+       RHS:
+        ExprASTnode:
+         IntASTnode: 4 <line: 9, column: 11>
+     BlockASTnode:
+      ExprASTnode:
+       FunCallASTnode:
+        IdentASTnode: print_int <line: 10, column: 5>
+        Args:
+         ExprASTnode:
+          BinOpASTnode:
+           Binary Operation: +
+           LHS:
+            ExprASTnode:
+             IdentASTnode: n <line: 10, column: 15>
+           RHS:
+            ExprASTnode:
+             IdentASTnode: m <line: 10, column: 17>
+     ElseStmt:
+      BlockASTnode:
+       ExprASTnode:
+        FunCallASTnode:
+         IdentASTnode: print_int <line: 13, column: 5>
+         Args:
+          ExprASTnode:
+           BinOpASTnode:
+            Binary Operation: *
+            LHS:
+             ExprASTnode:
+              IdentASTnode: n <line: 13, column: 15>
+            RHS:
+             ExprASTnode:
+              IdentASTnode: m <line: 13, column: 17>
+    ReturnASTnode:
+     ExprASTnode:
+      IdentASTnode: result <line: 16, column: 10>

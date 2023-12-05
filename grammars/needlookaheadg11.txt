@@ -1,0 +1,11 @@
+44 terms in lhs of grammar * 35 terminals = 1540, there are 1540 cells in the table
+1265 cells with 0 entries
+269 cells with 1 entry
+6 cells with more than 1 entry
+cells with more than 1 entry:
+('decl', "'int'") : [('first', 7, 0), ('first', 7, 1)]
+('decl', "'float'") : [('first', 7, 0), ('first', 7, 1)]
+('decl', "'bool'") : [('first', 7, 0), ('first', 7, 1)]
+('return_stmt', "'return'") : [('first', 25, 0), ('first', 25, 1)]
+('expr', 'IDENT') : [('first', 26, 0), ('first', 26, 1)]
+('rval7', 'IDENT') : [('first', 40, 1), ('first', 40, 2)]

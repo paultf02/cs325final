@@ -1,0 +1,50 @@
+ProgramASTnode:
+ ExternASTnode: 
+  FunProtoASTnode: int print_int(int) <line: 3, column: 12>
+ FunDeclASTnode:
+  FunProtoASTnode: void Void() <line: 5, column: 6>
+  FunBodyASTnode:
+   BlockASTnode:
+    VarDeclASTnode: int result <line: 6, column: 7>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: result <line: 7, column: 3>
+      ExprASTnode:
+       IntASTnode: 0 <line: 7, column: 12>
+    ExprASTnode:
+     FunCallASTnode:
+      IdentASTnode: print_int <line: 8, column: 3>
+      Args:
+       ExprASTnode:
+        IdentASTnode: result <line: 8, column: 13>
+    WhileASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: <
+       LHS:
+        ExprASTnode:
+         IdentASTnode: result <line: 9, column: 9>
+       RHS:
+        ExprASTnode:
+         IntASTnode: 10 <line: 9, column: 18>
+     BlockASTnode:
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: result <line: 10, column: 5>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            IdentASTnode: result <line: 10, column: 14>
+          RHS:
+           ExprASTnode:
+            IntASTnode: 1 <line: 10, column: 23>
+      ExprASTnode:
+       FunCallASTnode:
+        IdentASTnode: print_int <line: 11, column: 5>
+        Args:
+         ExprASTnode:
+          IdentASTnode: result <line: 11, column: 15>
+    ReturnASTnode:
+     void

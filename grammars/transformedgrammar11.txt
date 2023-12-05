@@ -1,0 +1,44 @@
+start -> program EOF
+program -> extern_list decl_list | decl_list
+extern_list -> extern extern_list1
+extern_list1 -> extern extern_list1 | epsilon
+extern -> 'extern' type_spec IDENT '(' params ')' ';'
+decl_list -> decl decl_list1
+decl_list1 -> decl decl_list1 | epsilon
+decl -> var_decl | fun_decl
+var_decl -> var_type IDENT ';'
+type_spec -> 'void' | var_type
+var_type -> 'int' | 'float' | 'bool'
+fun_decl -> type_spec IDENT '(' params ')' block
+params -> param_list | 'void' | epsilon
+param_list -> param param_list1
+param_list1 -> ',' param param_list1 | epsilon
+param -> var_type IDENT
+block -> '{' local_decls stmt_list '}'
+local_decls -> local_decl local_decls | epsilon
+local_decl -> var_type IDENT ';'
+stmt_list -> stmt stmt_list | epsilon
+stmt -> expr_stmt | block | if_stmt | while_stmt | return_stmt
+expr_stmt -> expr ';' | ';'
+while_stmt -> 'while' '(' expr ')' stmt
+if_stmt -> 'if' '(' expr ')' block else_stmt
+else_stmt -> 'else' block | epsilon
+return_stmt -> 'return' ';' | 'return' expr ';'
+expr -> IDENT '=' expr | rval
+rval -> rval1 rvalprime
+rvalprime -> '||' rval1 rvalprime | epsilon
+rval1 -> rval2 rval1prime
+rval1prime -> '&&' rval2 rval1prime | epsilon
+rval2 -> rval3 rval2prime
+rval2prime -> '==' rval3 rval2prime | '!=' rval3 rval2prime | epsilon
+rval3 -> rval4 rval3prime
+rval3prime -> '<=' rval4 rval3prime | '<' rval4 rval3prime | '>=' rval4 rval3prime | '>' rval4 rval3prime | epsilon
+rval4 -> rval5 rval4prime
+rval4prime -> '+' rval5 rval4prime | '-' rval5 rval4prime | epsilon
+rval5 -> rval6 rval5prime
+rval5prime -> '*' rval6 rval5prime | '/' rval6 rval5prime | '%' rval6 rval5prime | epsilon
+rval6 -> '-' rval6 | '!' rval6 | '+' rval6 | rval7
+rval7 -> '(' expr ')' | IDENT | IDENT '(' args ')' | INT_LIT | FLOAT_LIT | BOOL_LIT
+args -> arg_list | epsilon
+arg_list -> expr arg_list1
+arg_list1 -> ',' expr arg_list1 | epsilon

@@ -1,0 +1,104 @@
+ProgramASTnode:
+ FunDeclASTnode:
+  FunProtoASTnode: bool palindrome(int) <line: 3, column: 6>
+  FunBodyASTnode:
+   BlockASTnode:
+    VarDeclASTnode: int t <line: 5, column: 8>
+    VarDeclASTnode: int rev <line: 6, column: 8>
+    VarDeclASTnode: int rmndr <line: 7, column: 8>
+    VarDeclASTnode: bool result <line: 8, column: 9>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: rev <line: 10, column: 4>
+      ExprASTnode:
+       IntASTnode: 0 <line: 10, column: 10>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: result <line: 11, column: 4>
+      ExprASTnode:
+       BoolASTnode: false <line: 11, column: 13>
+    ExprASTnode:
+     AssignASTnode:
+      IdentASTnode: t <line: 13, column: 4>
+      ExprASTnode:
+       IdentASTnode: number <line: 13, column: 8>
+    WhileASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: >
+       LHS:
+        ExprASTnode:
+         IdentASTnode: number <line: 15, column: 11>
+       RHS:
+        ExprASTnode:
+         IntASTnode: 0 <line: 15, column: 20>
+     BlockASTnode:
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: rmndr <line: 17, column: 7>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: %
+          LHS:
+           ExprASTnode:
+            IdentASTnode: number <line: 17, column: 15>
+          RHS:
+           ExprASTnode:
+            IntASTnode: 10 <line: 17, column: 22>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: rev <line: 18, column: 7>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: +
+          LHS:
+           ExprASTnode:
+            BinOpASTnode:
+             Binary Operation: *
+             LHS:
+              ExprASTnode:
+               IdentASTnode: rev <line: 18, column: 13>
+             RHS:
+              ExprASTnode:
+               IntASTnode: 10 <line: 18, column: 17>
+          RHS:
+           ExprASTnode:
+            IdentASTnode: rmndr <line: 18, column: 22>
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: number <line: 19, column: 7>
+        ExprASTnode:
+         BinOpASTnode:
+          Binary Operation: /
+          LHS:
+           ExprASTnode:
+            IdentASTnode: number <line: 19, column: 16>
+          RHS:
+           ExprASTnode:
+            IntASTnode: 10 <line: 19, column: 23>
+    IfASTnode:
+     ExprASTnode:
+      BinOpASTnode:
+       Binary Operation: ==
+       LHS:
+        ExprASTnode:
+         IdentASTnode: t <line: 22, column: 7>
+       RHS:
+        ExprASTnode:
+         IdentASTnode: rev <line: 22, column: 12>
+     BlockASTnode:
+      ExprASTnode:
+       AssignASTnode:
+        IdentASTnode: result <line: 23, column: 7>
+        ExprASTnode:
+         BoolASTnode: true <line: 23, column: 16>
+     ElseStmt:
+      BlockASTnode:
+       ExprASTnode:
+        AssignASTnode:
+         IdentASTnode: result <line: 26, column: 7>
+         ExprASTnode:
+          BoolASTnode: false <line: 26, column: 16>
+    ReturnASTnode:
+     ExprASTnode:
+      IdentASTnode: result <line: 28, column: 11>
