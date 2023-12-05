@@ -9,7 +9,7 @@ make
 run the following command to generate first and followsets from the grammar:
 python3 firstfollow.py
 
-run the following command to run all of the tests:
+run the following command to run all of the tests (this code passes all of provided tests and additional tests written):
 ./tests/tests.sh
 
 We can change a global variable from can only be defined once (first definition being the first when the source is read top to bottom)
