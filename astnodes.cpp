@@ -571,26 +571,26 @@ Value* AssignASTnode::codegen(){
 ////////// comment out exactly one of the below two
 
 /////////////////////////begining of global variables can only be defined once 
-      // if (g){ // this is not a nullptr so global variable has been defined once beforee
-      //   throw CompileError(ident->tok, "global variable cannot be defined more than once");
-      // } else { // this is the first definition of the global variable
-      //   GlobalVariable *gnonnull = TheModule->getGlobalVariable(ident->name);
-      //   Type *lhstype = gnonnull->getValueType();
-      //   Value *tostore = force_cast(rhsvalue, lhstype, rhs->get_first_tok());
-      //   Builder->CreateStore(tostore, gnonnull);
-      //   GlobalNamedValues.at(ident->name) = gnonnull;
-      //   return rhsvalue;
-      // }
-////////////////////////////////////////////// end of global variables can only be defined once
-
-///////////////////////////////// beginning of global variables can be defined many times
-
+      if (g){ // this is not a nullptr so global variable has been defined once beforee
+        throw CompileError(ident->tok, "global variable cannot be defined more than once");
+      } else { // this is the first definition of the global variable
         GlobalVariable *gnonnull = TheModule->getGlobalVariable(ident->name);
         Type *lhstype = gnonnull->getValueType();
         Value *tostore = force_cast(rhsvalue, lhstype, rhs->get_first_tok());
         Builder->CreateStore(tostore, gnonnull);
         GlobalNamedValues.at(ident->name) = gnonnull;
         return rhsvalue;
+      }
+////////////////////////////////////////////// end of global variables can only be defined once
+
+///////////////////////////////// beginning of global variables can be defined many times
+
+        // GlobalVariable *gnonnull = TheModule->getGlobalVariable(ident->name);
+        // Type *lhstype = gnonnull->getValueType();
+        // Value *tostore = force_cast(rhsvalue, lhstype, rhs->get_first_tok());
+        // Builder->CreateStore(tostore, gnonnull);
+        // GlobalNamedValues.at(ident->name) = gnonnull;
+        // return rhsvalue;
 
 ////////////////////////////////////// end of global variables can be defined many times.
 
